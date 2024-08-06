@@ -7,6 +7,8 @@ import LoginView from 'pages/LoginView';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth';
+import RestrictedRoute from 'components/RestrictedRoute';
+import PrivateRoute from 'components/PrivateRoute';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -20,9 +22,25 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomeView />} />
-          <Route path="phonebook" element={<PhonebookView />} />
-          <Route path="register" element={<RegisterView />} />
-          <Route path="login" element={<LoginView />} />
+          <Route
+            path="contacts"
+            element={<PrivateRoute component={PhonebookView} />}
+          />
+          <Route
+            path="register"
+            element={
+              <RestrictedRoute
+                component={RegisterView}
+                redirectTo="/contacts"
+              />
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <RestrictedRoute component={LoginView} redirectTo="/contacts" />
+            }
+          />
         </Route>
       </Routes>
     </>
