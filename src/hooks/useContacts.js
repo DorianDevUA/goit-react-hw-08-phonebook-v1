@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-import { contactSelectors } from 'redux/contacts';
+import { contactsSelectors } from 'redux/contacts';
 
 const useContacts = () => {
-  const contacts = useSelector(contactSelectors.selectContacts);
-  const isLoading = useSelector(contactSelectors.selectIsLoading);
-  const error = useSelector(contactSelectors.selectError);
+  const contacts = useSelector(contactsSelectors.selectContacts);
+  const isLoading = useSelector(contactsSelectors.selectIsLoading);
+  const error = useSelector(contactsSelectors.selectError);
 
   return {
     contacts,
