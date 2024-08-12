@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth';
 import { useAuth } from 'hooks';
 import HomeView from 'pages/HomeView';
-import PhonebookView from 'pages/PhonebookView';
+import PhonebookPage from 'pages/PhonebookPage';
 import RegisterView from 'pages/RegisterView';
 import LoginView from 'pages/LoginView';
 import Layout from 'components/Layout';
@@ -27,7 +27,7 @@ const App = () => {
         <Route index element={<HomeView />} />
         <Route
           path="contacts"
-          element={<PrivateRoute component={PhonebookView} />}
+          element={<PrivateRoute component={PhonebookPage} />}
         />
         <Route
           path="register"
