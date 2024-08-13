@@ -5,7 +5,6 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { contactsOperations } from 'redux/contacts';
 import FormError from 'components/FormError';
-import IconButton from 'components/IconButton';
 
 const initialValues = {
   name: '',
@@ -55,12 +54,9 @@ const ContactForm = () => {
           <Field type="tel" name="number" id={numberInputId} />
           <FormError name="number" />
         </label>
-        <IconButton
-          type="submit"
-          text="Create"
-          title="Create contact"
-          aria-label="Create contact"
-        />
+        <button type="submit" title="Create contact">
+          Create
+        </button>
       </Form>
     </Formik>
   );
