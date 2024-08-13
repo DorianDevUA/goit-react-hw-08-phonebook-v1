@@ -5,11 +5,11 @@ export const StyledButton = styled.button`
   align-items: center;
   gap: 5px;
 
-  padding: 8px;
+  padding: 4px;
   color: white;
   background-color: ${({ theme }) => theme.colors.green};
   border: none;
-  border-radius: 4px;
+  border-radius: 50%;
   cursor: pointer;
 
   svg {
