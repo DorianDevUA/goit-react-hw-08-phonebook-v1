@@ -3,11 +3,12 @@ import { useEffect } from 'react';
 import {
   Backdrop,
   Body,
-  CloseModalBtn,
   Header,
   ModalContent,
   ModalTitle,
 } from './Modal.styled';
+import IconButton from 'components/IconButton';
+import { MdClose } from 'react-icons/md';
 
 const modalRoot = window.document.getElementById('modal-root');
 
@@ -37,9 +38,9 @@ const Modal = ({ children, title, onClose }) => {
       <ModalContent>
         <Header>
           <ModalTitle>{title}</ModalTitle>
-          <CloseModalBtn type="button" onClick={onClose}>
-            Close
-          </CloseModalBtn>
+          <IconButton onClick={onClose}>
+            <MdClose />
+          </IconButton>
         </Header>
         <Body>{children}</Body>
       </ModalContent>

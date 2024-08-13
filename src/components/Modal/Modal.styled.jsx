@@ -35,6 +35,4 @@ export const ModalTitle = styled.h2`
   margin: 0;
 `;
 
-export const CloseModalBtn = styled.button``;
-
 export const Body = styled.div``;
