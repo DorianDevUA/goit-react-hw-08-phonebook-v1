@@ -80,6 +80,4 @@ const contactsSlice = createSlice({
       ),
 });
 
-const { reducer } = contactsSlice;
-
-export default reducer;
+export default contactsSlice.reducer;
