@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import AppBar from 'components/AppBar';
 
 const Layout = () => {
@@ -10,6 +11,7 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
+      <Toaster />
     </>
   );
 };

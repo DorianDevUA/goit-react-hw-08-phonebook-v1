@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import toast from 'react-hot-toast';
 
 const getAll = createAsyncThunk('contacts/getAll', async (_, thunkAPI) => {
   try {
@@ -15,6 +16,7 @@ const createContact = createAsyncThunk(
   async (contact, thunkAPI) => {
     try {
       const { data } = await axios.post(`/contacts`, contact);
+      toast.success(`Додано новий контакт: ${data.name}!`);
       console.log(data);
       return data;
     } catch (error) {
