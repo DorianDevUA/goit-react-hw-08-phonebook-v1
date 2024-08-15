@@ -5,6 +5,7 @@ import { authOperations } from 'redux/auth';
 import { useAuth } from 'hooks';
 import HomePage from 'pages/HomePage';
 import PhonebookPage from 'pages/PhonebookPage';
+import TasksPage from 'pages/TasksPage';
 import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
 import Layout from 'components/Layout';
@@ -29,6 +30,7 @@ const App = () => {
           path="contacts"
           element={<PrivateRoute component={PhonebookPage} />}
         />
+        <Route path="tasks" element={<PrivateRoute component={TasksPage} />} />
         <Route
           path="register"
           element={

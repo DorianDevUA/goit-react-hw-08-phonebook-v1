@@ -11,9 +11,14 @@ const Navigation = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         {isLoggedIn && (
-          <li>
-            <NavLink to="contacts">Phonebook</NavLink>
-          </li>
+          <>
+            <li>
+              <NavLink to="contacts">Сontactbook</NavLink>
+            </li>
+            <li>
+              <NavLink to="tasks">Tasks</NavLink>
+            </li>
+          </>
         )}
       </ul>
     </div>
