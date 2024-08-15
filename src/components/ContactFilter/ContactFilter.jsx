@@ -2,23 +2,25 @@ import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filter';
 
-const ContactFilter = () => {
+const ContactFilter = ({ value, onChange }) => {
   const dispatch = useDispatch();
-  const filterByNameInputId = nanoid();
+  const filterInputId = nanoid();
 
-  const handleChange = ({ target: { value } }) => {
-    console.log('value:', value);
-    dispatch(setFilter(value));
+  const handleChange = evt => {
+    const filterQuery = evt.target.value;
+
+    onChange(filterQuery);
+    dispatch(setFilter(filterQuery));
   };
 
   return (
-    <label htmlFor={filterByNameInputId}>
+    <label htmlFor={filterInputId}>
       <span>Find contacts by name:</span>
       <input
         type="search"
+        value={value}
         name="contactsFilter"
-        id={filterByNameInputId}
-        placeholder="Search..."
+        id={filterInputId}
         onChange={handleChange}
       />
     </label>
