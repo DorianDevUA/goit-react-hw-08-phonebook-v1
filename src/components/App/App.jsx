@@ -3,10 +3,10 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth';
 import { useAuth } from 'hooks';
-import HomeView from 'pages/HomeView';
+import HomePage from 'pages/HomePage';
 import PhonebookPage from 'pages/PhonebookPage';
-import RegisterView from 'pages/RegisterView';
-import LoginView from 'pages/LoginView';
+import RegisterPage from 'pages/RegisterPage';
+import LoginPage from 'pages/LoginPage';
 import Layout from 'components/Layout';
 import RestrictedRoute from 'components/RestrictedRoute';
 import PrivateRoute from 'components/PrivateRoute';
@@ -24,7 +24,7 @@ const App = () => {
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomeView />} />
+        <Route index element={<HomePage />} />
         <Route
           path="contacts"
           element={<PrivateRoute component={PhonebookPage} />}
@@ -32,13 +32,13 @@ const App = () => {
         <Route
           path="register"
           element={
-            <RestrictedRoute component={RegisterView} redirectTo="/contacts" />
+            <RestrictedRoute component={RegisterPage} redirectTo="/contacts" />
           }
         />
         <Route
           path="login"
           element={
-            <RestrictedRoute component={LoginView} redirectTo="/contacts" />
+            <RestrictedRoute component={LoginPage} redirectTo="/contacts" />
           }
         />
         <Route path="*" element={<Navigate to="/" />} />
